@@ -23,5 +23,38 @@ namespace WordLibTests
             // Verify the result
             Assert.AreEqual(true, IsPalindrome);
         }
+
+        [TestMethod]
+        public void IsWord_Palindrome_ThrowsNullReferenceException()
+        {
+            // Create instance to test
+            Word word = new Word();
+
+            //Run the method and expect an exception
+            Assert.ThrowsException<NullReferenceException>(() => word.IsPalindrome(""));
+        }
+
+        [TestMethod]
+        public void Word_Counter_Return_input_length()
+        {
+            // Create instance to test
+            Word word = new Word();
+
+            // Run the method
+            int count = word.Counter("radar");
+
+            // Verify the result
+            Assert.AreEqual(5, count);
+        }
+
+        [TestMethod]
+        public void Word_Counter_ThrowsNullReferenceException()
+        {
+            // Create instance to test
+            Word word = new Word();
+
+            //Run the method and expect an exception
+            Assert.ThrowsException<NullReferenceException>(() => word.Counter(""));
+        }
     }
 }

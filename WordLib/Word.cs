@@ -30,5 +30,15 @@ namespace WordLib
                 return false;
             }
         }
+
+        public int Counter(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new NullReferenceException("Input can not be empty!!");
+            }
+
+            return input.Length;
+        }
     }
 }
